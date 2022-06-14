@@ -6,18 +6,18 @@ concurrency:
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
   changelog:
-    uses: ansible-network/github_actions/.github/workflows/changelog.yml@main
+    uses: apkawa/github_actions/.github/workflows/ansible_collection/changelog.yml@master
   integration:
-    uses: ansible-network/github_actions/.github/workflows/integration_simple.yml@main
+    uses: apkawa/github_actions/.github/workflows/ansible_collection/integration_simple.yml@master
   sanity:
-    uses: ansible-network/github_actions/.github/workflows/sanity.yml@main
+    uses: apkawa/github_actions/.github/workflows/ansible_collection/sanity.yml@master
   unit-galaxy:
-    uses: ansible-network/github_actions/.github/workflows/unit_galaxy.yml@main
+    uses: apkawa/github_actions/.github/workflows/ansible_collection/unit_galaxy.yml@master
 
   all_green:
     if: ${{ always() }}
