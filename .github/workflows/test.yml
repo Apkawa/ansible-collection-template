@@ -11,13 +11,13 @@ on:
 
 jobs:
   changelog:
-    uses: Apkawa/github-actions/.github/workflows/ansible_collection-changelog.yml@master
+    uses: Apkawa/github-actions/.github/workflows/ansible_collections-changelog.yml@master
   integration:
-    uses: Apkawa/github-actions/.github/workflows/ansible_collection-integration_simple.yml@master
+    uses: Apkawa/github-actions/.github/workflows/ansible_collections-integration_simple.yml@master
   sanity:
-    uses: Apkawa/github-actions/.github/workflows/ansible_collection-sanity.yml@master
+    uses: Apkawa/github-actions/.github/workflows/ansible_collections-sanity.yml@master
   unit-galaxy:
-    uses: Apkawa/github-actions/.github/workflows/ansible_collection-unit_galaxy.yml@master
+    uses: Apkawa/github-actions/.github/workflows/ansible_collections-unit_galaxy.yml@master
 
   all_green:
     if: ${{ always() }}
