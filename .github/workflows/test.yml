@@ -26,7 +26,7 @@ jobs:
   all_green:
     if: ${{ always() }}
     needs:
-      - changelog
+#      - changelog
       - integration
       - sanity
       - unit-galaxy
@@ -34,7 +34,7 @@ jobs:
     steps:
       - run: >-
           python -c "assert set([
-          '${{ needs.changelog.result }}',
+#          '${{ needs.changelog.result }}',
           '${{ needs.integration.result }}',
           '${{ needs.sanity.result }}',
           '${{ needs.unit-galaxy.result }}'
