@@ -23,7 +23,7 @@ author:
 
 EXAMPLES = '''
 - name: Example echo
-  apkawa_common_modules.echo_info:
+  apkawa_collection_template.echo_info:
     messages:
         - foo
         - bar
