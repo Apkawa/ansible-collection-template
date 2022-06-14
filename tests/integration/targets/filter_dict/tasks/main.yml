@@ -1,0 +1,7 @@
+---
+- name: "Test dict filter"
+  assert:
+    that:
+      - "[['a', 'b']] | apkawa.collection_template.dict == dict([['a', 'b']])"
+      - "[['a', 'b'], [1, 2]] | apkawa.collection_template.dict == dict([['a', 'b'], [1, 2]])"
+      - "[] | apkawa.collection_template.dict == dict([])"

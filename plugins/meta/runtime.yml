@@ -1,0 +1,21 @@
+---
+requires_ansible: '>=2.11.0'
+plugin_routing:
+  connection:
+#    docker:
+#      redirect: community.docker.docker
+  lookup: []
+  modules: []
+  doc_fragments: []
+  module_utils: []
+  callback: []
+#    stderr:
+#      tombstone:
+#        removal_version: 2.0.0
+#        warning_text: Use the 'default' callback plugin with 'display_failed_stderr
+#          = yes' option.
+  inventory: []
+  filter: []
+  action:
+    echo:
+      redirect: apkawa.collection_template.echo
