@@ -72,3 +72,4 @@ You can trigger it locally with `pre-commit run --all-files` or even to run only
 * [Best practices](https://docs.ansible.com/ansible/devel/dev_guide/developing_modules_best_practices.html)
 * [Testing](https://docs.ansible.com/ansible/latest/dev_guide/testing.html)
 * [Integration testing](https://docs.ansible.com/ansible/latest/dev_guide/testing_integration.html)
+* [Changelog](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections_changelogs.html)
