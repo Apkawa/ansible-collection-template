@@ -8,9 +8,11 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: fix-encoding-pragma
+      - id: fix-byte-order-marker
       - id: check-ast
       - id: check-merge-conflict
       - id: check-symlinks
+      - id: check-yaml
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.9.0
     hooks:

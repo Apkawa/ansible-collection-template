@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+from __future__ import (absolute_import, division, print_function)
+__metaclass__ = type
+
 from plugins.modules import echo_info
 from tests.unit.utils import ModuleTestCase, AnsibleFailJson, set_module_args, AnsibleExitJson
 
@@ -20,29 +24,22 @@ class TestEcho_Info(ModuleTestCase):
             set_module_args({})
             self.module.main()
         assert exc_info.exception.args[0] == {
-            'msg': 'missing required arguments: messages', 'failed': True
+            "msg": "missing required arguments: messages",
+            "failed": True,
         }
 
     def test_echo(self):
         """key and account will pass, returns domains"""
         with self.assertRaises(AnsibleExitJson) as exc_info:
-            set_module_args({
-                'messages': ['foo']
-            })
+            set_module_args({"messages": ["foo"]})
             self.module.main()
         result = exc_info.exception.args[0]
-        assert result == {
-            'messages': ['foo'], 'changed': False
-        }
+        assert result == {"messages": ["foo"], "changed": False}
 
     def test_empty_message(self):
         """key and account will pass, returns domains"""
         with self.assertRaises(AnsibleFailJson) as exc_info:
-            set_module_args({
-                'messages': []
-            })
+            set_module_args({"messages": []})
             self.module.main()
         result = exc_info.exception.args[0]
-        assert result == {
-            'msg': 'messages is empty!', 'messages': [], 'failed': True
-        }
+        assert result == {"msg": "messages is empty!", "messages": [], "failed": True}

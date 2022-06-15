@@ -23,4 +23,5 @@
   assert:
     that:
       - '"Custom Message" in echo_result["echo_command"]'
-
+      - 'echo_result_error["failed"]'
+      - '"missing required arguments: msg" in echo_result_error["errors"]'

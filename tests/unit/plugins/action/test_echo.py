@@ -36,17 +36,17 @@ class TestEcho_Action(unittest.TestCase):
         )
         self._plugin.get_distribution = MagicMock()
         self._plugin.get_distribution.return_value = {
-            'name': 'ubuntu',
-            'version': '20',
-            'family': 'debian'
+            "name": "ubuntu",
+            "version": "20",
+            "family": "debian",
         }
         self._plugin._low_level_execute_command = MagicMock()
         self._plugin._low_level_execute_command.return_value = {
-            'rc': 0,
-            'stdout': '',
-            'stdout_lines': [],
-            'stderr': '',
-            'stderr_lines': [],
+            "rc": 0,
+            "stdout": "",
+            "stdout_lines": [],
+            "stderr": "",
+            "stderr_lines": [],
         }
         self._plugin._task.action = "echo"
         self._task_vars = {"inventory_hostname": "mockdevice"}
@@ -56,17 +56,13 @@ class TestEcho_Action(unittest.TestCase):
         self._plugin._task.args = {}
         result = self._plugin.run(task_vars=self._task_vars)
         assert result == {
-            'echo': True,
-            'changed': True,
-            'echo_command': 'echo Echo initiated by Ansible'
+            'errors': 'missing required arguments: msg',
+            'failed': True,
+            'msg': 'argspec validation failed for echo plugin'
         }
 
     def test_success(self):
         """Check passing invalid argspec"""
         self._plugin._task.args = {"msg": "Custom message"}
         result = self._plugin.run(task_vars=self._task_vars)
-        assert result == {
-            'echo': True,
-            'changed': True,
-            'echo_command': 'echo Custom message'
-        }
+        assert result == {"echo": True, "changed": True, "echo_command": "echo Custom message"}

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # (c) 2014, Toshio Kuratomi <tkuratomi@ansible.com>
 #
 # This file is part of Ansible
@@ -16,12 +17,13 @@
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 
 # Make coding more python3-ish
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
-'''
+"""
 Compat module for Python2.7's unittest module
-'''
+"""
 
 import sys
 
@@ -33,6 +35,6 @@ if sys.version_info < (2, 7):
         # Need unittest2 on python2.6
         from unittest2 import *
     except ImportError:
-        print('You need unittest2 installed on python2.6.x to run tests')
+        print("You need unittest2 installed on python2.6.x to run tests")
 else:
     from unittest import *

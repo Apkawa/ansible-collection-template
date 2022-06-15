@@ -73,3 +73,4 @@ You can trigger it locally with `pre-commit run --all-files` or even to run only
 * [Testing](https://docs.ansible.com/ansible/latest/dev_guide/testing.html)
 * [Integration testing](https://docs.ansible.com/ansible/latest/dev_guide/testing_integration.html)
 * [Changelog](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections_changelogs.html)
+* [ignore.txt format](https://docs.ansible.com/ansible/latest/dev_guide/testing/sanity/ignores.html#ignore-file-format)

@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 # (c) 2012-2014, Michael DeHaan <michael.dehaan@gmail.com>
 #
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 import os
@@ -13,7 +15,6 @@ from ansible.module_utils.common.text.converters import to_bytes, to_text
 
 
 class DictDataLoader(DataLoader):
-
     def __init__(self, file_mapping=None):
         file_mapping = {} if file_mapping is None else file_mapping
         assert type(file_mapping) == dict
@@ -54,7 +55,7 @@ class DictDataLoader(DataLoader):
     def list_directory(self, path):
         ret = []
         path = to_text(path)
-        for x in (list(self._file_mapping.keys()) + self._known_directories):
+        for x in list(self._file_mapping.keys()) + self._known_directories:
             if x.startswith(path):
                 if os.path.dirname(x) == path:
                     ret.append(os.path.basename(x))
@@ -72,7 +73,7 @@ class DictDataLoader(DataLoader):
         self._known_directories = []
         for path in self._file_mapping:
             dirname = os.path.dirname(path)
-            while dirname not in ('/', ''):
+            while dirname not in ("/", ""):
                 self._add_known_directory(dirname)
                 dirname = os.path.dirname(dirname)
 

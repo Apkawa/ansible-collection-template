@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # (c) 2014, Toshio Kuratomi <tkuratomi@ansible.com>
 #
 # This file is part of Ansible
@@ -16,7 +17,8 @@
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 
 # Make coding more python3-ish
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 #
@@ -28,6 +30,6 @@ __metaclass__ = type
 try:
     import __builtin__
 except ImportError:
-    BUILTINS = 'builtins'
+    BUILTINS = "builtins"
 else:
-    BUILTINS = '__builtin__'
+    BUILTINS = "__builtin__"

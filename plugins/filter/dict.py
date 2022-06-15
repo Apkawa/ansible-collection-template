@@ -4,9 +4,10 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
-DOCUMENTATION = '''
+DOCUMENTATION = """
   name: dict
   short_description: Convert a list of tuples into a dictionary
   version_added: 3.0.0
@@ -19,9 +20,9 @@ DOCUMENTATION = '''
       type: list
       elements: tuple
       required: true
-'''
+"""
 
-EXAMPLES = '''
+EXAMPLES = """
 - name: Convert list of tuples into dictionary
   ansible.builtin.set_fact:
     dictionary: "{{ [[1, 2], ['a', 'b']] | community.general.dict }}"
@@ -52,27 +53,27 @@ EXAMPLES = '''
   #     "k2": 42,
   #     "k3": "b"
   #   }
-'''
+"""
 
-RETURN = '''
+RETURN = """
   _value:
     description: The dictionary having the provided key-value pairs.
     type: boolean
-'''
+"""
 
 
 def dict_filter(sequence):
-    '''Convert a list of tuples to a dictionary.
+    """Convert a list of tuples to a dictionary.
 
     Example: ``[[1, 2], ['a', 'b']] | community.general.dict`` results in ``{1: 2, 'a': 'b'}``
-    '''
+    """
     return dict(sequence)
 
 
 class FilterModule(object):
-    '''Ansible jinja2 filters'''
+    """Ansible jinja2 filters"""
 
     def filters(self):
         return {
-            'dict': dict_filter,
+            "dict": dict_filter,
         }

@@ -29,4 +29,3 @@
       - "echo_result.messages == ['foo', 'bar']"
       - 'echo_result_error.failed'
       - "echo_result_error.msg == 'missing required arguments: messages'"
-
