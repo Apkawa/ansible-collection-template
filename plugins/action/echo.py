@@ -107,6 +107,9 @@ class ActionModule(ActionBase):
         valid, argspec_result, self._task.args = check_argspec(
             DOCUMENTATION, name=self._task.action, schema_conditionals=None, **self._task.args
         )
+        if not valid and not isinstance(argspec_result['errors'], list):
+            argspec_result['errors'] = [argspec_result['errors']]
+
         return valid, argspec_result
 
     def perform_cmd(self, task_vars, distribution):

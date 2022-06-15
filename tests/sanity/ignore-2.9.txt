@@ -1,2 +1,23 @@
+plugins/modules/echo.py compile-2.6!skip
+plugins/modules/echo.py compile-2.7!skip
+plugins/modules/echo.py compile-3.5!skip
+plugins/modules/echo.py compile-3.6!skip
+plugins/modules/echo.py future-import-boilerplate!skip
+plugins/modules/echo.py import-2.6!skip
+plugins/modules/echo.py import-2.7!skip
+plugins/modules/echo.py import-3.5!skip
+plugins/modules/echo.py import-3.6!skip
+plugins/modules/echo.py metaclass-boilerplate!skip
 plugins/modules/echo.py validate-modules:missing-gplv3-license # Use WTFPL
+plugins/modules/echo_info.py compile-2.6!skip
+plugins/modules/echo_info.py compile-2.7!skip
+plugins/modules/echo_info.py compile-3.5!skip
+plugins/modules/echo_info.py compile-3.6!skip
+plugins/modules/echo_info.py future-import-boilerplate!skip
+plugins/modules/echo_info.py import-2.6!skip
+plugins/modules/echo_info.py import-2.7!skip
+plugins/modules/echo_info.py import-3.5!skip
+plugins/modules/echo_info.py import-3.6!skip
+plugins/modules/echo_info.py metaclass-boilerplate!skip
 plugins/modules/echo_info.py validate-modules:missing-gplv3-license # Use WTFPL
+tests/sanity/refresh_ignore_files.py shebang!skip

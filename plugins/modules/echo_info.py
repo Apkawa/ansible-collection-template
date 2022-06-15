@@ -15,9 +15,9 @@ options:
   messages:
     type: list
     elements: str
+    required: true
     description: >
         list of messages
-    default: []
 
 """
 

@@ -3,15 +3,13 @@ from __future__ import absolute_import, division, print_function
 
 __metaclass__ = type
 
-import re
 import unittest
 
 from ansible.playbook.task import Task
 from ansible.template import Templar
 
-from tests.unit.compat.mock import MagicMock, patch
-
 from plugins.action.echo import ActionModule
+from tests.unit.compat.mock import MagicMock
 
 
 class TestEcho_Action(unittest.TestCase):
@@ -56,7 +54,7 @@ class TestEcho_Action(unittest.TestCase):
         self._plugin._task.args = {}
         result = self._plugin.run(task_vars=self._task_vars)
         assert result == {
-            'errors': 'missing required arguments: msg',
+            'errors': ['missing required arguments: msg'],
             'failed': True,
             'msg': 'argspec validation failed for echo plugin'
         }

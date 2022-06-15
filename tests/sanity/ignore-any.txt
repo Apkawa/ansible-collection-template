@@ -1,0 +1,2 @@
+plugins/modules/echo.py validate-modules:missing-gplv3-license # Use WTFPL
+plugins/modules/echo_info.py validate-modules:missing-gplv3-license # Use WTFPL
