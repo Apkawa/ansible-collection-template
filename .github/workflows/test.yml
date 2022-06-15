@@ -14,14 +14,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  changelog:
-    uses: Apkawa/github-actions/.github/workflows/ansible_collections-changelog.yml@master
   integration:
     uses: Apkawa/github-actions/.github/workflows/ansible_collections-integration_simple.yml@master
   sanity:
     uses: Apkawa/github-actions/.github/workflows/ansible_collections-sanity.yml@master
   unit-galaxy:
     uses: Apkawa/github-actions/.github/workflows/ansible_collections-unit_galaxy.yml@master
+  molecule:
+    uses: Apkawa/github-actions/.github/workflows/ansible_collections-molecule.yml@master
 
   all_green:
     if: ${{ always() }}
@@ -29,6 +29,7 @@ jobs:
       - integration
       - sanity
       - unit-galaxy
+      - molecule
     runs-on: ubuntu-latest
     steps:
       - run: >-
@@ -36,4 +37,5 @@ jobs:
           '${{ needs.integration.result }}',
           '${{ needs.sanity.result }}',
           '${{ needs.unit-galaxy.result }}'
+          '${{ needs.molecule.result }}'
           ]) == {'success'}"

@@ -8,3 +8,7 @@ mock; python_version < '3'
 pytest-xdist
 yamllint
 antsibull-changelog
+
+molecule[docker]>=2.22,<3.0
+rich>=9.5.1,<11.0.0
+anyconfig>=0.9,<0.10

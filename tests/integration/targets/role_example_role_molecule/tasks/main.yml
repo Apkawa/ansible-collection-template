@@ -1,0 +1,14 @@
+---
+#May be destructive!
+
+- include_role:
+    name: apkawa.collection_template.example_role_molecule
+
+- set_fact:
+      test_file: "{{lookup('file', '/tmp/test') }}"
+
+- debug: var=test_file
+
+- assert:
+    that:
+      - 'test_file == "EXAMPLE=molecule"'

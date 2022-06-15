@@ -16,3 +16,7 @@ repository: https://github.com/Apkawa/ansible-collection-template
 documentation: https://github.com/Apkawa/ansible-collection-template/README.md
 homepage: https://github.com/Apkawa/ansible-collection-template
 issues: https://github.com/Apkawa/ansible-collection-template/issues
+build_ignore:
+  - 'tests/*'
+  - '*.tar.gz'
+  - 'docs/*'
