@@ -1,5 +1,6 @@
 collections/
 tests/integration/inventory
+*.tar.gz
 # Created by https://www.toptal.com/developers/gitignore/api/vim,git,macos,linux,pydev,emacs,dotenv,python,windows,webstorm,pycharm+all,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,git,macos,linux,pydev,emacs,dotenv,python,windows,webstorm,pycharm+all,jupyternotebooks
 

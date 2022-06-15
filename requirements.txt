@@ -1,1 +1,1 @@
-https://github.com/ansible/ansible/archive/stable-2.9.tar.gz
+ansible>=2.9
